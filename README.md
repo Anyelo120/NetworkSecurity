@@ -24,7 +24,7 @@
   - `DiscordConfirmationAPI.solicitarConfirmacion(UUID)` – Ask Discord user to confirm login
 - 🛡️ Admins can monitor login verifications via Discord with interactive buttons (✅ Yes / ❌ No)
 - 🌐 Multi-language support for Discord messages
-- 
+
 🎬 Demo video: https://youtu.be/mXGepIGXYEg
 ---
 
