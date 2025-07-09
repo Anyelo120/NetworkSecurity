@@ -1,0 +1,72 @@
+ip.blocked.temp=§c⚠ 您的 IP 已被暂时封锁。\n§7请加入服务器的 Discord 验证您的身份。
+ip.blocked=§c由于安全原因，您被拒绝访问。\n§e认为这是误封？-> gg/gatitos
+
+command.link.only-player=§c该指令只能由玩家使用。
+command.link.usage=§e用法：/vincular-discord <discord名称>
+command.link.success=§7{0}
+command.unlink.only-player=§c该指令只能由玩家使用。
+command.unlink.success=§7{0}
+
+command.test.only-console=§c该指令只能通过控制台执行。
+
+command.admin.no-permission=§c你没有权限使用这个指令。
+command.admin.usage.delete=§c用法：/ipadmin delete <ip>
+command.admin.usage.wipe=§c用法：/ipadmin wipe confirm
+command.admin.ip-removed=§aIP {0} 已从缓存中移除。
+command.admin.stats.title=§6--- IP 统计 ---
+command.admin.stats.blocked=§c已封锁：§f{0}
+command.admin.stats.allowed=§a已允许：§f{0}
+command.admin.wipe.success=§4数据库中的所有数据已被清除。
+command.admin.wipe.failed=§c清除失败，请重试。
+command.admin.unknown-subcommand=§c未知的子指令。可用：delete, stats, wipe
+command.admin.help.header=§e用法：
+command.admin.help.delete=§7/ipadmin delete <ip> - 从缓存中删除 IP
+command.admin.help.stats=§7/ipadmin stats - 显示已封锁和允许的数量
+command.admin.help.wipe=§7/ipadmin wipe - 警告！清除整个数据库（需确认）
+
+command.test.usage=§e用法：/ipchecktest <ip>
+command.test.success=§a成功执行 IP 检测：{0}
+command.test.error=§c执行指令出错：{0}
+
+uuid.missing=§c无法获取玩家的 UUID。\n§e认为这是误封？-> gg/gatitos
+ip.missing=§c无法获取玩家的 IP。\n§e认为这是误封？-> gg/gatitos
+
+webhook.prefix.time=`[{0}]`
+webhook.message.blocked=玩家 `{0}` 已被封锁。
+webhook.reason.country-continent=因所在国家或洲被限制，连接被封锁。\n国家：{0}\n洲：{1}
+webhook.reason.early-block=提前封锁：所在国家或洲被限制。\n国家：{0}\n洲：{1}
+webhook.reason.proxy=因使用 VPN 或代理，连接被封锁。\nIP：{0}\nUUID：{1}
+webhook.reason.mismatch=疑似账号被盗：国家信息不一致。
+
+discord.link.sent=✔ 已向 Discord 发送绑定请求，等待确认。
+discord.link.not-found=❌ 无法找到用户：{0}
+discord.link.invalid-channel=❌ 无效的 Discord 频道。
+discord.link.message=🔗 <@{0}>，你收到了一个绑定请求。点击接受以绑定你的 Minecraft UUID `{1}`
+discord.link.expired=❌ 绑定请求已过期。
+
+discord.unlink.requested=✔ 已向 Discord 发送解绑请求，等待确认。
+discord.unlink.not-linked=❌ 你的 Minecraft 账户尚未绑定。
+discord.unlink.error=⚠ 获取绑定信息时发生错误。
+discord.unlink.not-found=⚠ 找不到已绑定的 Discord 用户。
+discord.unlink.message=⚠ <@{0}>，你是否希望**解绑**你的 Minecraft 账户？
+discord.unlink.expired=⌛ 解绑请求已过期。
+
+discord.confirmation.message=🛡️ <@{0}> 有人正在尝试登录你的账户。是你本人吗？
+discord.confirmation.expired=⌛ 确认请求已过期。
+discord.confirmation.response=感谢你的回复。
+discord.confirmation.error=❌ 无法删除验证消息。
+discord.confirmation.no-link=❌ 没有找到与该账户绑定的 Discord 用户。
+discord.confirmation.channel-error=❌ 无法发送确认请求，请检查频道设置。
+discord.confirmation.yes=是
+discord.confirmation.no=否
+
+discord.accept.expired=❌ 此请求已过期。
+discord.accept.unauthorized=⚠ 你无权接受此请求。
+discord.accept.already-linked=❌ 此 Minecraft 账户已绑定。
+discord.accept.already-used=❌ 此 Discord 用户已绑定至其他账户。
+discord.accept.success=✔ 绑定成功！
+discord.accept.error=❌ 无法删除确认消息。
+
+discord.unlink.confirm.success=✔ 你已成功解绑账户。
+discord.unlink.confirm.error=⚠ 解绑账户时出现问题。
+discord.unlink.confirm.unauthorized=⚠ 只有绑定用户可以确认此操作。

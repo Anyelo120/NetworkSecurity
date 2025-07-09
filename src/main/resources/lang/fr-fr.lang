@@ -1,0 +1,72 @@
+ip.blocked.temp=§c⚠ Votre IP est temporairement bloquée.\n§7Veuillez vérifier notre serveur Discord pour confirmer votre identité.
+ip.blocked=§cAccès refusé pour des raisons de sécurité.\n§eVous pensez que c'est une erreur ? -> gg/gatitos
+
+command.link.only-player=§cCette commande peut uniquement être utilisée par un joueur.
+command.link.usage=§eUtilisation : /lier-discord <nom_discord>
+command.link.success=§7{0}
+command.unlink.only-player=§cCette commande peut uniquement être utilisée par un joueur.
+command.unlink.success=§7{0}
+
+command.test.only-console=§cCette commande doit être exécutée depuis la console.
+
+command.admin.no-permission=§cVous n’avez pas la permission d’utiliser cette commande.
+command.admin.usage.delete=§cUtilisation : /ipadmin delete <ip>
+command.admin.usage.wipe=§cUtilisation : /ipadmin wipe confirm
+command.admin.ip-removed=§aL’IP {0} a été supprimée du cache.
+command.admin.stats.title=§6--- Statistiques des IPs ---
+command.admin.stats.blocked=§cBloquées : §f{0}
+command.admin.stats.allowed=§aAutorisées : §f{0}
+command.admin.wipe.success=§4Toutes les données ont été supprimées de la base.
+command.admin.wipe.failed=§cÉchec de la suppression. Veuillez réessayer.
+command.admin.unknown-subcommand=§cSous-commande inconnue. Essayez : delete, stats, wipe
+command.admin.help.header=§eUtilisation :
+command.admin.help.delete=§7/ipadmin delete <ip> - Supprime une IP du cache
+command.admin.help.stats=§7/ipadmin stats - Affiche le nombre d’IPs bloquées/autorisées
+command.admin.help.wipe=§7/ipadmin wipe - DANGER ! Supprime toute la base de données (confirmation requise)
+
+command.test.usage=§eUtilisation : /ipchecktest <ip>
+command.test.success=§aCommande exécutée avec succès pour l’IP : {0}
+command.test.error=§cErreur lors de l’exécution de la commande : {0}
+
+uuid.missing=§cImpossible d’obtenir l’UUID du joueur.\n§eVous pensez que c’est une erreur ? -> gg/gatitos
+ip.missing=§cImpossible d’obtenir l’adresse IP du joueur.\n§eVous pensez que c’est une erreur ? -> gg/gatitos
+
+webhook.prefix.time=`[{0}]`
+webhook.message.blocked=Le joueur `{0}` a été bloqué.
+webhook.reason.country-continent=Bloqué pour cause de pays ou continent restreint.\nPays : {0}\nContinent : {1}
+webhook.reason.early-block=Blocage anticipé à cause de restrictions par pays/continent.\nPays : {0}\nContinent : {1}
+webhook.reason.proxy=Connexion bloquée à cause d’un VPN ou proxy.\nIP : {0}\nUUID : {1}
+webhook.reason.mismatch=Soupçon de vol de compte : incohérence de pays détectée.
+
+discord.link.sent=✔ Demande envoyée sur Discord. En attente de confirmation.
+discord.link.not-found=❌ Impossible de trouver l'utilisateur : {0}
+discord.link.invalid-channel=❌ Canal Discord invalide.
+discord.link.message=🔗 <@{0}>, tu as une demande de liaison. Accepte pour lier avec l'UUID Minecraft `{1}`
+discord.link.expired=❌ La demande de liaison a expiré.
+
+discord.unlink.requested=✔ Demande de déliaison envoyée sur Discord. En attente de confirmation.
+discord.unlink.not-linked=❌ Ton compte Minecraft n'est pas lié.
+discord.unlink.error=⚠ Erreur lors de la récupération du lien.
+discord.unlink.not-found=⚠ Impossible de trouver l'utilisateur lié.
+discord.unlink.message=⚠ <@{0}>, veux-tu **délier** ton compte Minecraft ?
+discord.unlink.expired=⌛ La demande de déliaison a expiré.
+
+discord.confirmation.message=🛡️ <@{0}> Quelqu’un essaie de se connecter à ton compte. Est-ce toi ?
+discord.confirmation.expired=⌛ La demande de confirmation a expiré.
+discord.confirmation.response=Merci pour ta réponse.
+discord.confirmation.error=❌ Impossible de supprimer le message de confirmation.
+discord.confirmation.no-link=❌ Aucun utilisateur Discord lié trouvé.
+discord.confirmation.channel-error=❌ Impossible d'envoyer la demande. Vérifie la configuration du canal.
+discord.confirmation.yes=Oui
+discord.confirmation.no=Non
+
+discord.accept.expired=❌ Cette demande a déjà expiré.
+discord.accept.unauthorized=⚠ Tu n’es pas autorisé à accepter cette demande.
+discord.accept.already-linked=❌ Ce compte Minecraft est déjà lié.
+discord.accept.already-used=❌ Cet utilisateur Discord est déjà lié à un autre compte.
+discord.accept.success=✔ Liaison réussie !
+discord.accept.error=❌ Impossible de supprimer le message de confirmation.
+
+discord.unlink.confirm.success=✔ Tu as bien délié ton compte.
+discord.unlink.confirm.error=⚠ Problème lors de la déliaison de ton compte.
+discord.unlink.confirm.unauthorized=⚠ Seul l’utilisateur lié peut confirmer cette action.

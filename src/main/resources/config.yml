@@ -1,0 +1,70 @@
+# ===============================
+# SecurityNetwork - Configuration
+# ===============================
+# This file allows you to control who can join the server
+# by filtering based on proxy use, country, or continent.
+# You can use up to 3 different APIs to detect IPs.
+# -------------------------------
+# Useful API documentation:
+# - ProxyCheck.io: https://proxycheck.io/
+# - IpInfo: https://ipinfo.io/
+# - IPGeolocation: https://ipgeolocation.io/
+#
+# Country codes (ISO 3166-1 alpha-2): https://www.iban.com/country-codes
+# Valid continent names used: Africa, Antarctica, Asia, Europe, North America, Oceania, South America
+# ===============================
+lang: es-es
+
+api:
+  # API keys for the IP detection services.
+  # Leave an API blank if you don’t want to use it.
+# ===============================
+# VPN Y PROXY - Configuration
+# ===============================
+  proxycheck: your-proxycheck-key # https://proxycheck.io/
+  ipHub: your-proxycheck-key # https://iphub.info/
+  ipQualityScore: your-proxycheck-key # https://www.ipqualityscore.com/
+
+# ===============================
+# GEOLOCALIZADORES - Configuration (not mandatory)
+# ===============================
+  ipinfo: your-ipinfo-token # https://ipinfo.io/
+  ipgeolocation: your-ipgeolocation-key # https://ipgeolocation.io/
+
+# Alerts about blocking users who attempt to:
+# - Take over accounts
+# - Use VPN or proxy
+# - Not allowed country
+# - Not allowed continent
+webhook:
+  discord: "https://discord.com/api/webhooks/..."
+
+countries:
+  # Defines how the country filter works:
+  # - "blacklist": blocks ONLY the countries listed below.
+  # - "whitelist": allows ONLY the countries listed.
+  mode: blacklist
+  list:
+    - US     # United States
+    - RU     # Russia
+
+continents:
+  # Defines how the continent filter works:
+  # - "blacklist": blocks ONLY the continents listed below.
+  # - "whitelist": allows ONLY the continents listed.
+  mode: whitelist
+  list:
+    - Europe
+    - South America
+
+storage:
+  # Storage type for cache and player-country tracking.
+  # Velocity/Bungee: "json", "mysql" <- AVAILABLE
+  # Spigot/Paper/Purpur: "sqlite", "json" or "mysql"  <- AVAILABLE
+  type: json
+  # If using MySQL, uncomment and configure the following:
+  # mysqlHost: localhost
+  # mysqlPort: 3306
+  # mysqlDatabase: network_security
+  # mysqlUser: root
+  # mysqlPassword: password123

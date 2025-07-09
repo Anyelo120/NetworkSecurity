@@ -1,0 +1,72 @@
+ip.blocked.temp=§c⚠ Your IP is temporarily blocked.\n§7Check the server Discord to confirm your identity.
+ip.blocked=§cAccess denied due to security measures.\n§eThink this is a mistake? -> gg/gatitos
+
+command.link.only-player=§cOnly players can use this command.
+command.link.usage=§eUsage: /link-discord <discord_name>
+command.link.success=§7{0}
+command.unlink.only-player=§cOnly players can use this command.
+command.unlink.success=§7{0}
+
+command.test.only-console=§cThis command can only be run from the console.
+
+command.admin.no-permission=§cYou don't have permission to use this command.
+command.admin.usage.delete=§cUsage: /ipadmin delete <ip>
+command.admin.usage.wipe=§cUsage: /ipadmin wipe confirm
+command.admin.ip-removed=§aIP {0} has been removed from cache.
+command.admin.stats.title=§6--- IP Statistics ---
+command.admin.stats.blocked=§cBlocked: §f{0}
+command.admin.stats.allowed=§aAllowed: §f{0}
+command.admin.wipe.success=§4All data was wiped from the database.
+command.admin.wipe.failed=§cWipe failed. Please try again.
+command.admin.unknown-subcommand=§cUnknown subcommand. Use: delete, stats, wipe
+command.admin.help.header=§eUsage:
+command.admin.help.delete=§7/ipadmin delete <ip> - Remove an IP from cache
+command.admin.help.stats=§7/ipadmin stats - Show blocked and allowed IP counts
+command.admin.help.wipe=§7/ipadmin wipe - WARNING! Wipes the entire database (requires confirmation)
+
+command.test.usage=§eUsage: /ipchecktest <ip>
+command.test.success=§aCommand executed successfully for IP: {0}
+command.test.error=§cError while executing the command: {0}
+
+uuid.missing=§cCould not retrieve player UUID.\n§eThink this is a mistake? -> gg/gatitos
+ip.missing=§cCould not retrieve player IP.\n§eThink this is a mistake? -> gg/gatitos
+
+webhook.prefix.time=`[{0}]`
+webhook.message.blocked=Player `{0}` has been blocked.
+webhook.reason.country-continent=Blocked due to restricted country or continent.\nCountry: {0}\nContinent: {1}
+webhook.reason.early-block=Early block due to country/continent restrictions.\nCountry: {0}\nContinent: {1}
+webhook.reason.proxy=Connection blocked for using VPN or proxy.\nIP: {0}\nUUID: {1}
+webhook.reason.mismatch=Possible account theft: country mismatch detected.
+
+discord.link.sent=✔ Request sent to Discord. Waiting for confirmation.
+discord.link.not-found=❌ Could not find the user: {0}
+discord.link.invalid-channel=❌ Invalid Discord channel.
+discord.link.message=🔗 <@{0}>, you have a linking request. Click accept to link with Minecraft UUID `{1}`
+discord.link.expired=❌ The linking request has expired.
+
+discord.unlink.requested=✔ Unlink request sent to Discord. Waiting for confirmation.
+discord.unlink.not-linked=❌ Your Minecraft account is not linked.
+discord.unlink.error=⚠ Error retrieving the link.
+discord.unlink.not-found=⚠ Could not find the linked user.
+discord.unlink.message=⚠ <@{0}>, do you want to **unlink** your Minecraft account?
+discord.unlink.expired=⌛ The unlink request has expired.
+
+discord.confirmation.message=🛡️ <@{0}> Someone is trying to log into your account. Is it you?
+discord.confirmation.expired=⌛ Confirmation request expired.
+discord.confirmation.response=Thank you for your response.
+discord.confirmation.error=❌ Could not delete the authentication message.
+discord.confirmation.no-link=❌ No Discord user linked to this account was found.
+discord.confirmation.channel-error=❌ Could not send confirmation request. Check your channel configuration.
+discord.confirmation.yes=Yes
+discord.confirmation.no=No
+
+discord.accept.expired=❌ This request has already expired.
+discord.accept.unauthorized=⚠ You are not authorized to accept this request.
+discord.accept.already-linked=❌ This Minecraft account is already linked.
+discord.accept.already-used=❌ This Discord user is already linked to another account.
+discord.accept.success=✔ Linking complete!
+discord.accept.error=❌ Could not delete the confirmation message.
+
+discord.unlink.confirm.success=✔ Your account has been unlinked.
+discord.unlink.confirm.error=⚠ There was an issue unlinking your account.
+discord.unlink.confirm.unauthorized=⚠ Only the linked user can confirm this.

@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>rottenbonestudio.system</groupId>
+	<artifactId>SecurityNetwork</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>SecurityNetwork</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>papermc</id>
+			<url>https://repo.papermc.io/repository/maven-public/</url>
+		</repository>
+		<repository>
+			<id>spigotmc-repo</id>
+			<url>https://repo.spigotmc.org/snapshots/</url>
+		</repository>
+		<repository>
+			<id>velocitypowered-repo</id>
+			<url>https://repo.velocitypowered.com/snapshots/</url>
+		</repository>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20210307</version>
+		</dependency>
+
+		<!-- Paper API -->
+		<dependency>
+			<groupId>io.papermc.paper</groupId>
+			<artifactId>paper-api</artifactId>
+			<version>1.20.4-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- BungeeCord API -->
+		<dependency>
+			<groupId>net.md-5</groupId>
+			<artifactId>bungeecord-api</artifactId>
+			<version>1.20-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Velocity API -->
+		<dependency>
+			<groupId>com.velocitypowered</groupId>
+			<artifactId>velocity-api</artifactId>
+			<version>3.2.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Discord java API -->
+		<dependency>
+			<groupId>net.dv8tion</groupId>
+			<artifactId>JDA</artifactId>
+			<version>5.6.1</version>
+			<exclusions>
+				<!-- Excluye solo audio para reducir tamaño -->
+				<exclusion>
+					<groupId>club.minnced</groupId>
+					<artifactId>opus-java</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.google.crypto.tink</groupId>
+					<artifactId>tink</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Compilador Java -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<shadedArtifactAttached>true</shadedArtifactAttached>
+							<shadedClassifierName>all</shadedClassifierName>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+										<exclude>**/module-info.class</exclude>
+									</excludes>
+								</filter>
+							</filters>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

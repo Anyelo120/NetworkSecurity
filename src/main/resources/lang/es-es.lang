@@ -1,0 +1,72 @@
+ip.blocked.temp=§c⚠ Tu IP está bloqueada temporalmente.\n§7Revisa el Discord del servidor para confirmar tu identidad.
+ip.blocked=§cAcceso denegado por medidas de seguridad. \n§e¿Crees que es un error? -> gg/gatitos
+
+command.link.only-player=§cEste comando solo puede ser usado por jugadores.
+command.link.usage=§eUso: /vincular-discord <nombre_discord>
+command.link.success=§7{0}
+command.unlink.only-player=§cEste comando solo puede ser usado por jugadores.
+command.unlink.success=§7{0}
+
+command.test.only-console=§cEste comando solo puede ser ejecutado desde la consola.
+
+command.admin.no-permission=§cNo tienes permiso para usar este comando.
+command.admin.usage.delete=§cUso: /ipadmin delete <ip>
+command.admin.usage.wipe=§cUso: /ipadmin wipe confirm
+command.admin.ip-removed=§aIP {0} eliminada de la caché.
+command.admin.stats.title=§6--- Estadísticas de IPs ---
+command.admin.stats.blocked=§cBloqueadas: §f{0}
+command.admin.stats.allowed=§aPermitidas: §f{0}
+command.admin.wipe.success=§4Todos los datos fueron eliminados de la base de datos.
+command.admin.wipe.failed=§cLa eliminación falló. Inténtalo de nuevo.
+command.admin.unknown-subcommand=§cSubcomando desconocido. Usa: delete, stats, wipe
+command.admin.help.header=§eUso:
+command.admin.help.delete=§7/ipadmin delete <ip> - Elimina una IP de la caché
+command.admin.help.stats=§7/ipadmin stats - Muestra cantidad de bloqueadas y permitidas
+command.admin.help.wipe=§7/ipadmin wipe - ¡PELIGRO! Borra toda la base de datos (requiere confirmación)
+
+command.test.usage=§eUso: /ipchecktest <ip>
+command.test.success=§aComando ejecutado correctamente para IP: {0}
+command.test.error=§cError ejecutando el comando: {0}
+
+uuid.missing=§cNo se pudo obtener el UUID del jugador. \n§e¿Crees que es un error? -> gg/gatitos
+ip.missing=§cNo se pudo obtener la IP del jugador. \n§e¿Crees que es un error? -> gg/gatitos
+
+webhook.prefix.time=`[{0}]`
+webhook.message.blocked=Jugador `{0}` bloqueado.
+webhook.reason.country-continent=Bloqueado por país o continente restringido.\nPaís: {0}\nContinente: {1}
+webhook.reason.early-block=Bloqueo anticipado por país/continente.\nPaís: {0}\nContinente: {1}
+webhook.reason.proxy=Conexión bloqueada por VPN o Proxy.\nIP: {0}\nUUID: {1}
+webhook.reason.mismatch=Posible robo de cuenta: Desajuste de país.
+
+discord.link.sent=✔ Solicitud enviada a Discord. Esperando confirmación.
+discord.link.not-found=❌ No se pudo encontrar al usuario: {0}
+discord.link.invalid-channel=❌ Canal de Discord inválido.
+discord.link.message=🔗 <@{0}>, tienes una solicitud de vinculación. Acepta para vincular con Minecraft UUID `{1}`
+discord.link.expired=❌ La solicitud de vinculación ha expirado.
+
+discord.unlink.requested=✔ Solicitud de desvinculación enviada a Discord. Esperando confirmación.
+discord.unlink.not-linked=❌ Tu cuenta de Minecraft no está vinculada.
+discord.unlink.error=⚠ Error al obtener el vínculo.
+discord.unlink.not-found=⚠ No se pudo encontrar al usuario vinculado.
+discord.unlink.message=⚠ <@{0}>, ¿deseas **desvincular** tu cuenta de Minecraft?
+discord.unlink.expired=⌛ La solicitud de desvinculación ha expirado.
+
+discord.confirmation.message=🛡️ <@{0}> Alguien está intentando entrar a tu cuenta. ¿Eres tú?
+discord.confirmation.expired=⌛ Solicitud de confirmación expirada.
+discord.confirmation.response=Gracias por tu respuesta.
+discord.confirmation.error=❌ No se pudo borrar el mensaje de autenticación.
+discord.confirmation.no-link=❌ No se encontró un usuario de Discord vinculado a esta cuenta.
+discord.confirmation.channel-error=❌ No se pudo enviar la solicitud de confirmación. Revisa la configuración del canal.
+discord.confirmation.yes=Sí
+discord.confirmation.no=No
+
+discord.accept.expired=❌ Esta solicitud ya expiró.
+discord.accept.unauthorized=⚠ No estás autorizado para aceptar esta solicitud.
+discord.accept.already-linked=❌ Esta cuenta de Minecraft ya está vinculada.
+discord.accept.already-used=❌ Este usuario de Discord ya está vinculado con otra cuenta.
+discord.accept.success=✔ ¡Vinculación completada!
+discord.accept.error=❌ No se pudo borrar el mensaje de confirmación.
+
+discord.unlink.confirm.success=✔ Has desvinculado tu cuenta.
+discord.unlink.confirm.error=⚠ Hubo un problema al desvincular tu cuenta.
+discord.unlink.confirm.unauthorized=⚠ Solo el usuario vinculado puede confirmar esto.
