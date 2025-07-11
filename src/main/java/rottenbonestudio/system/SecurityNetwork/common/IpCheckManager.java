@@ -107,7 +107,15 @@ public class IpCheckManager {
 				logger.info("[IP Change Detected] Solicitando confirmación por Discord...");
 
 				try {
-					boolean confirmed = DiscordConfirmationAPI.solicitarConfirmacion(playerUUID).get();
+					IPAnalysisResult analysis = geoAnalyzer.analyze(ip);
+					String hora = java.time.LocalTime.now().toString();
+					String cuentas = storage.getPlayersLinkedToIP(ip);
+					String pais = analysis.getCountryCode();
+					String continente = analysis.getContinent();
+
+					boolean confirmed = DiscordConfirmationAPI
+							.solicitarConfirmacion(playerUUID, ip, pais, continente, hora, cuentas).get();
+
 					if (!confirmed) {
 						logger.warning("[Access Denied] El jugador no confirmó acceso desde nueva IP.");
 						ipTempBlockedUntil.put(ip, System.currentTimeMillis() + 10 * 60 * 1000);

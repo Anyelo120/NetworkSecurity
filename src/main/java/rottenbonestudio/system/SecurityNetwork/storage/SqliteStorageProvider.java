@@ -190,4 +190,24 @@ public class SqliteStorageProvider implements StorageProvider {
 		return null;
 	}
 
+	@Override
+	public String getPlayersLinkedToIP(String ip) {
+		try (Connection conn = DriverManager.getConnection(DB_URL)) {
+			PreparedStatement stmt = conn.prepareStatement(
+					"SELECT uuid FROM player_ips WHERE last_ip = ?");
+			stmt.setString(1, ip);
+			ResultSet rs = stmt.executeQuery();
+
+			StringBuilder sb = new StringBuilder();
+			while (rs.next()) {
+				if (sb.length() > 0) sb.append(", ");
+				sb.append(rs.getString("uuid"));
+			}
+			return sb.toString();
+		} catch (SQLException e) {
+			logger.warning("[SQLite] Error al obtener jugadores por IP: " + e.getMessage());
+			return "";
+		}
+	}
+	
 }

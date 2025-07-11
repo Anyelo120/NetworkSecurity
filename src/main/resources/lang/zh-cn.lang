@@ -70,3 +70,10 @@ discord.accept.error=❌ 无法删除确认消息。
 discord.unlink.confirm.success=✔ 你已成功解绑账户。
 discord.unlink.confirm.error=⚠ 解绑账户时出现问题。
 discord.unlink.confirm.unauthorized=⚠ 只有绑定用户可以确认此操作。
+
+discord.confirmation.details.title=🔐 登录尝试信息：
+discord.confirmation.details.ip=• IP地址：`{0}`
+discord.confirmation.details.country=• 国家：`{0}`
+discord.confirmation.details.continent=• 大洲：`{0}`
+discord.confirmation.details.time=• 时间：`{0}`
+discord.confirmation.details.accounts=• 与此IP关联的账号：`{0}`

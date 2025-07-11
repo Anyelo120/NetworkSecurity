@@ -70,3 +70,10 @@ discord.accept.error=❌ No s'ha pogut esborrar el missatge de confirmació.
 discord.unlink.confirm.success=✔ Has desvinculat el teu compte.
 discord.unlink.confirm.error=⚠ Hi ha hagut un problema en desvincular el teu compte.
 discord.unlink.confirm.unauthorized=⚠ Només l'usuari vinculat pot confirmar això.
+
+discord.confirmation.details.title=🔐 Informació de l'intent d'accés:
+discord.confirmation.details.ip=• IP: `{0}`
+discord.confirmation.details.country=• País: `{0}`
+discord.confirmation.details.continent=• Continent: `{0}`
+discord.confirmation.details.time=• Hora: `{0}`
+discord.confirmation.details.accounts=• Comptes vinculats a aquesta IP: `{0}`

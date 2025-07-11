@@ -22,4 +22,6 @@ public interface StorageProvider {
     void updatePlayerIP(String uuid, String ip);
     
     String getLastIP(String uuid);
+
+    String getPlayersLinkedToIP(String ip);
 }

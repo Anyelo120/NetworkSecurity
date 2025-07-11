@@ -70,3 +70,10 @@ discord.accept.error=❌ Impossible de supprimer le message de confirmation.
 discord.unlink.confirm.success=✔ Tu as bien délié ton compte.
 discord.unlink.confirm.error=⚠ Problème lors de la déliaison de ton compte.
 discord.unlink.confirm.unauthorized=⚠ Seul l’utilisateur lié peut confirmer cette action.
+
+discord.confirmation.details.title=🔐 Informações da tentativa de acesso:
+discord.confirmation.details.ip=• IP: `{0}`
+discord.confirmation.details.country=• País: `{0}`
+discord.confirmation.details.continent=• Continente: `{0}`
+discord.confirmation.details.time=• Horário: `{0}`
+discord.confirmation.details.accounts=• Contas vinculadas a este IP: `{0}`

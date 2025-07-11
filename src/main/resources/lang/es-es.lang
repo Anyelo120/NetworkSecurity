@@ -70,3 +70,10 @@ discord.accept.error=❌ No se pudo borrar el mensaje de confirmación.
 discord.unlink.confirm.success=✔ Has desvinculado tu cuenta.
 discord.unlink.confirm.error=⚠ Hubo un problema al desvincular tu cuenta.
 discord.unlink.confirm.unauthorized=⚠ Solo el usuario vinculado puede confirmar esto.
+
+discord.confirmation.details.title=🔐 Información del intento:
+discord.confirmation.details.ip=• IP: `{0}`
+discord.confirmation.details.country=• País: `{0}`
+discord.confirmation.details.continent=• Continente: `{0}`
+discord.confirmation.details.time=• Hora: `{0}`
+discord.confirmation.details.accounts=• Cuentas vinculadas a esta IP: `{0}`

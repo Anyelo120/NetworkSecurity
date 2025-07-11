@@ -70,3 +70,11 @@ discord.accept.error=❌ Could not delete the confirmation message.
 discord.unlink.confirm.success=✔ Your account has been unlinked.
 discord.unlink.confirm.error=⚠ There was an issue unlinking your account.
 discord.unlink.confirm.unauthorized=⚠ Only the linked user can confirm this.
+
+discord.confirmation.details.title=🔐 Access Attempt Information:
+discord.confirmation.details.ip=• IP: `{0}`
+discord.confirmation.details.country=• Country: `{0}`
+discord.confirmation.details.continent=• Continent: `{0}`
+discord.confirmation.details.time=• Time: `{0}`
+discord.confirmation.details.accounts=• Accounts linked to this IP: `{0}`
+

@@ -218,6 +218,39 @@ public class DiscordBot extends ListenerAdapter {
 				event.reply(LangManager.get("discord.accept.expired")).setEphemeral(true).queue();
 			}
 		}
+		
+		if (event.getComponentId().startsWith("confirm_auth_info_")) {
+		    String[] split = event.getComponentId().split("_");
+		    if (split.length < 4)
+		        return;
+
+		    UUID uuid = UUID.fromString(split[3]);
+
+		    String expectedDiscordId = JsonLinkStorage.getDiscordIdByUUID(uuid.toString());
+		    if (expectedDiscordId == null || !event.getUser().getId().equals(expectedDiscordId)) {
+		        event.reply(LangManager.get("discord.confirmation.unauthorized")).setEphemeral(true).queue();
+		        return;
+		    }
+
+		    String[] details = DiscordConfirmationAPI.getConfirmationDetails(uuid);
+		    if (details == null) return;
+
+		    String ip = details[0];
+		    String pais = details[1];
+		    String continente = details[2];
+		    String hora = details[3];
+		    String cuentas = details[4];
+
+		    String response = "**" + LangManager.get("discord.confirmation.details.title") + "**\n" +
+		            LangManager.get("discord.confirmation.details.ip", ip) + "\n" +
+		            LangManager.get("discord.confirmation.details.country", pais) + "\n" +
+		            LangManager.get("discord.confirmation.details.continent", continente) + "\n" +
+		            LangManager.get("discord.confirmation.details.time", hora) + "\n" +
+		            LangManager.get("discord.confirmation.details.accounts", cuentas);
+
+		    event.reply(response).setEphemeral(true).queue();
+		}
+
 	}
 
 	public LinkCommandHandler getCommandHandler() {

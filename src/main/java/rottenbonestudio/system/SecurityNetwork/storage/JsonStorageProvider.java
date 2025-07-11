@@ -263,5 +263,17 @@ public class JsonStorageProvider implements StorageProvider {
 	public String getLastIP(String uuid) {
 		return playerIpMap.get(uuid);
 	}
+	
+	@Override
+	public String getPlayersLinkedToIP(String ip) {
+		StringBuilder sb = new StringBuilder();
+		for (Map.Entry<String, String> entry : playerIpMap.entrySet()) {
+			if (entry.getValue().equals(ip)) {
+				if (sb.length() > 0) sb.append(", ");
+				sb.append(entry.getKey());
+			}
+		}
+		return sb.toString();
+	}
 
 }
