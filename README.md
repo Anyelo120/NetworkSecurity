@@ -15,15 +15,53 @@
 
 ---
 
-## 📁 Project Structure
-SecurityNetwork/
-├── common/ # Shared logic and APIs
-├── spigot/ # Spigot/Paper-specific implementation
-├── bungee/ # BungeeCord-specific implementation
-├── velocity/ # Velocity-specific implementation
-├── storage/ # Storage implementations (MySQL, SQLite)
-├── config/ # YAML config loaders
-└── libs/ # Auto-downloaded dependencies (not in repo)
+## 📁 API
+```java
+// Get Discord ID from Minecraft UUID
+DiscordLinkAPI.getDiscordIdByMinecraft(UUID playerUUID);
+
+// Get Minecraft UUID from Discord ID
+DiscordLinkAPI.getMinecraftUUIDByDiscordId(String discordId);
+```
+```Java
+CompletableFuture<Boolean> confirmacion = DiscordConfirmationAPI.solicitarConfirmacionConDetalles(
+    playerUUID,
+    ip,                  // null o real
+    pais,                // null o real
+    continente,          // null o real
+    horaIntento,         // null o real
+    cuentasVinculadas    // null o real
+);
+```
+
+Ejemplos:
+
+```Java
+String ip = "123.45.67.89";
+String pais = "AR";
+String continente = "South America";
+String hora = LocalTime.now().toString();
+String cuentas = DATABASE.getPlayersLinkedToIP(ip);
+
+DiscordConfirmationAPI
+    .solicitarConfirmacionConDetalles(playerUUID, ip, pais, continente, hora, cuentas)
+    .thenAccept(confirmado -> {
+        if (confirmado) {
+            // -----------
+        } else {
+            // -----------
+        }
+    });
+```
+```java
+DiscordConfirmationAPI
+    .solicitarConfirmacionConDetalles(playerUUID, null, null, null, null, null)
+    .thenAccept(confirmado -> {
+        if (confirmado) {
+            // OK
+        }
+    });
+```
 
 ---
 
