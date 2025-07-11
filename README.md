@@ -24,7 +24,7 @@ DiscordLinkAPI.getDiscordIdByMinecraft(UUID playerUUID);
 DiscordLinkAPI.getMinecraftUUIDByDiscordId(String discordId);
 ```
 ```Java
-CompletableFuture<Boolean> confirmacion = DiscordConfirmationAPI.solicitarConfirmacionConDetalles(
+CompletableFuture<Boolean> confirmacion = DiscordConfirmationAPI.solicitarConfirmacion(
     playerUUID,
     ip,                  // null o real
     pais,                // null o real
@@ -44,7 +44,7 @@ String hora = LocalTime.now().toString();
 String cuentas = DATABASE.getPlayersLinkedToIP(ip);
 
 DiscordConfirmationAPI
-    .solicitarConfirmacionConDetalles(playerUUID, ip, pais, continente, hora, cuentas)
+    .solicitarConfirmacion(playerUUID, ip, pais, continente, hora, cuentas)
     .thenAccept(confirmado -> {
         if (confirmado) {
             // -----------
@@ -55,7 +55,7 @@ DiscordConfirmationAPI
 ```
 ```java
 DiscordConfirmationAPI
-    .solicitarConfirmacionConDetalles(playerUUID, null, null, null, null, null)
+    .solicitarConfirmacion(playerUUID, null, null, null, null, null)
     .thenAccept(confirmado -> {
         if (confirmado) {
             // OK
