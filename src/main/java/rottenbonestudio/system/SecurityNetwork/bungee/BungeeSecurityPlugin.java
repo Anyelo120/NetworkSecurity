@@ -112,6 +112,10 @@ public class BungeeSecurityPlugin extends Plugin {
 			storage.mysqlDatabase = bungeeConfig.getString("storage.mysql.database");
 			storage.mysqlUser = bungeeConfig.getString("storage.mysql.user");
 			storage.mysqlPassword = bungeeConfig.getString("storage.mysql.password");
+			
+			storage.RedisHost = bungeeConfig.getString("storage.redis.host");
+			storage.RedisPort = bungeeConfig.getInt("storage.redis.port");
+			storage.RedisPassword = bungeeConfig.getString("storage.redis.password");
 			config.storage = storage;
 
 			FilterRule countries = new FilterRule();

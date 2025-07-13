@@ -71,8 +71,17 @@ public class IpCheckManager {
 		if ("mysql".equalsIgnoreCase(config.getStorageType())) {
 			return new MysqlStorageProvider(config.getMySQLHost(), config.getMySQLPort(), config.getMySQLDatabase(),
 					config.getMySQLUser(), config.getMySQLPassword());
+
 		} else if ("json".equalsIgnoreCase(config.getStorageType())) {
 			return new JsonStorageProvider();
+
+		} else if ("Mariadb".equalsIgnoreCase(config.getStorageType())) {
+			return new MariaDBStorageProvider(config.getMySQLHost(), config.getMySQLPort(), config.getMySQLDatabase(),
+					config.getMySQLUser(), config.getMySQLPassword());
+
+		} else if ("redis".equalsIgnoreCase(config.getStorageType())) {
+			return new RedisStorageProvider(config.getRedisHost(), config.getRedisPort(), config.getRedisPassword());
+
 		} else {
 			return new SqliteStorageProvider();
 		}

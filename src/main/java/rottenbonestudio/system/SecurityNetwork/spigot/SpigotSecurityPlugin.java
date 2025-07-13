@@ -89,6 +89,10 @@ public class SpigotSecurityPlugin extends JavaPlugin {
 		storage.mysqlDatabase = getConfig().getString("storage.mysql.database");
 		storage.mysqlUser = getConfig().getString("storage.mysql.user");
 		storage.mysqlPassword = getConfig().getString("storage.mysql.password");
+		
+		storage.RedisHost = getConfig().getString("storage.redis.host");
+		storage.RedisPort = getConfig().getInt("storage.redis.port");
+		storage.RedisPassword = getConfig().getString("storage.redis.password");
 		config.storage = storage;
 
 		getLogger().info("Loaded Storage configuration:");

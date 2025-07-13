@@ -66,6 +66,18 @@ public class IpCheckConfig {
 	public String getMySQLPassword() {
 		return storage != null ? storage.mysqlPassword : "";
 	}
+	
+	public int getRedisPort() {
+		return storage != null ? storage.RedisPort : 6379;
+	}
+	
+	public String getRedisHost() {
+		return storage != null ? storage.RedisHost : "localhost";
+	}
+	
+	public String getRedisPassword() {
+		return storage != null ? storage.RedisPassword : "";
+	}
 
 	public String getWebhookUrl() {
 		return this.webhookUrl;
@@ -94,6 +106,10 @@ public class IpCheckConfig {
 		public String mysqlDatabase;
 		public String mysqlUser;
 		public String mysqlPassword;
+		
+		public int RedisPort;
+		public String RedisPassword;
+		public String RedisHost;
 	}
 
 }

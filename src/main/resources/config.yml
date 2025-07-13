@@ -59,12 +59,18 @@ continents:
 
 storage:
   # Storage type for cache and player-country tracking.
-  # Velocity/Bungee: "json", "mysql" <- AVAILABLE
-  # Spigot/Paper/Purpur: "sqlite", "json" or "mysql"  <- AVAILABLE
+  # Velocity/Bungee: "json", "mysql", "mariadb", "redis" <- AVAILABLE
+  # Spigot/Paper/Purpur: "sqlite", "json", "redis", "mariadb", "mysql"  <- AVAILABLE
   type: json
-  # If using MySQL, uncomment and configure the following:
+  # If using MySQL or MariaDB, uncomment and configure the following:
   # mysqlHost: localhost
   # mysqlPort: 3306
   # mysqlDatabase: network_security
   # mysqlUser: root
   # mysqlPassword: password123
+  
+  # If using Redis, uncomment and configure the following:
+  #redis:
+  #  host: "127.0.0.1"
+  #  port: 6379
+  #  password: ""
