@@ -5,15 +5,18 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLoginEvent;
+import org.bukkit.plugin.java.JavaPlugin;
 import rottenbonestudio.system.SecurityNetwork.common.IpCheckManager;
 import rottenbonestudio.system.SecurityNetwork.common.LangManager;
 
 public class PlayerJoinListener implements Listener {
 
 	private final IpCheckManager ipCheckManager;
+	private final JavaPlugin plugin;
 
-	public PlayerJoinListener(IpCheckManager ipCheckManager) {
+	public PlayerJoinListener(IpCheckManager ipCheckManager, JavaPlugin plugin) {
 		this.ipCheckManager = ipCheckManager;
+		this.plugin = plugin;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -36,15 +39,15 @@ public class PlayerJoinListener implements Listener {
 			return;
 		}
 
-		Bukkit.getScheduler().runTaskAsynchronously(Bukkit.getPluginManager().getPlugin("SecurityNetwork"), () -> {
-			boolean blocked = ipCheckManager.verifyPlayerAccess(uuid, ip, bypassVPN, bypassCountry, bypassContinent, bypassAll);
+		Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+			boolean blocked = ipCheckManager.verifyPlayerAccess(uuid, ip, bypassVPN, bypassCountry, bypassContinent,
+					bypassAll);
 			if (blocked) {
-				Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("SecurityNetwork"), () -> {
+				Bukkit.getScheduler().runTask(plugin, () -> {
 					event.setResult(PlayerLoginEvent.Result.KICK_OTHER);
 					event.setKickMessage(LangManager.get("ip.blocked"));
 				});
 			}
 		});
 	}
-	
 }

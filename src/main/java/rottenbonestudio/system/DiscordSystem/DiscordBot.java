@@ -61,7 +61,20 @@ public class DiscordBot extends ListenerAdapter {
 			return;
 		}
 
+		cleanChannel();
+
 		this.commandHandler = new LinkCommandHandler(jda);
+	}
+
+	private void cleanChannel() {
+		TextChannel channel = jda.getTextChannelById(Config.getChannelId());
+		if (channel != null) {
+			channel.getHistory().retrievePast(100).queue(messages -> {
+				if (!messages.isEmpty()) {
+					channel.deleteMessages(messages).queue();
+				}
+			});
+		}
 	}
 
 	public String solicitarVinculacion(UUID playerUUID, String discordName) {
@@ -85,11 +98,10 @@ public class DiscordBot extends ListenerAdapter {
 					activeMessages.put(sentMessage.getId(), playerUUID);
 					scheduler.schedule(() -> {
 						if (activeMessages.remove(sentMessage.getId()) != null) {
-							sentMessage.editMessage(LangManager.get("discord.link.expired")).setComponents().queue(null,
-									throwable -> {
-										System.err.println("❌ Error al editar mensaje de expiración (vinculación): "
-												+ throwable.getMessage());
-									});
+							sentMessage.delete().queue(null, error -> {
+								System.err.println(
+										"❌ Error al eliminar mensaje expirado (vinculación): " + error.getMessage());
+							});
 							commandHandler.complete(playerUUID);
 						}
 					}, 5, TimeUnit.MINUTES);
@@ -122,11 +134,10 @@ public class DiscordBot extends ListenerAdapter {
 					activeMessages.put(sentMessage.getId(), playerUUID);
 					scheduler.schedule(() -> {
 						if (activeMessages.remove(sentMessage.getId()) != null) {
-							sentMessage.editMessage(LangManager.get("discord.unlink.expired")).setComponents()
-									.queue(null, throwable -> {
-										System.err.println("❌ Error al editar mensaje de expiración (desvinculación): "
-												+ throwable.getMessage());
-									});
+							sentMessage.delete().queue(null, error -> {
+								System.err.println(
+										"❌ Error al eliminar mensaje expirado (desvinculación): " + error.getMessage());
+							});
 						}
 					}, 5, TimeUnit.MINUTES);
 				});
@@ -218,37 +229,38 @@ public class DiscordBot extends ListenerAdapter {
 				event.reply(LangManager.get("discord.accept.expired")).setEphemeral(true).queue();
 			}
 		}
-		
+
 		if (event.getComponentId().startsWith("confirm_auth_info_")) {
-		    String[] split = event.getComponentId().split("_");
-		    if (split.length < 4)
-		        return;
+			String[] split = event.getComponentId().split("_");
+			if (split.length < 4)
+				return;
 
-		    UUID uuid = UUID.fromString(split[3]);
+			UUID uuid = UUID.fromString(split[3]);
 
-		    String expectedDiscordId = JsonLinkStorage.getDiscordIdByUUID(uuid.toString());
-		    if (expectedDiscordId == null || !event.getUser().getId().equals(expectedDiscordId)) {
-		        event.reply(LangManager.get("discord.confirmation.unauthorized")).setEphemeral(true).queue();
-		        return;
-		    }
+			String expectedDiscordId = JsonLinkStorage.getDiscordIdByUUID(uuid.toString());
+			if (expectedDiscordId == null || !event.getUser().getId().equals(expectedDiscordId)) {
+				event.reply(LangManager.get("discord.confirmation.unauthorized")).setEphemeral(true).queue();
+				return;
+			}
 
-		    String[] details = DiscordConfirmationAPI.getConfirmationDetails(uuid);
-		    if (details == null) return;
+			String[] details = DiscordConfirmationAPI.getConfirmationDetails(uuid);
+			if (details == null)
+				return;
 
-		    String ip = details[0];
-		    String pais = details[1];
-		    String continente = details[2];
-		    String hora = details[3];
-		    String cuentas = details[4];
+			String ip = details[0];
+			String pais = details[1];
+			String continente = details[2];
+			String hora = details[3];
+			String cuentas = details[4];
 
-		    String response = "**" + LangManager.get("discord.confirmation.details.title") + "**\n" +
-		            LangManager.get("discord.confirmation.details.ip", ip) + "\n" +
-		            LangManager.get("discord.confirmation.details.country", pais) + "\n" +
-		            LangManager.get("discord.confirmation.details.continent", continente) + "\n" +
-		            LangManager.get("discord.confirmation.details.time", hora) + "\n" +
-		            LangManager.get("discord.confirmation.details.accounts", cuentas);
+			String response = "**" + LangManager.get("discord.confirmation.details.title") + "**\n"
+					+ LangManager.get("discord.confirmation.details.ip", ip) + "\n"
+					+ LangManager.get("discord.confirmation.details.country", pais) + "\n"
+					+ LangManager.get("discord.confirmation.details.continent", continente) + "\n"
+					+ LangManager.get("discord.confirmation.details.time", hora) + "\n"
+					+ LangManager.get("discord.confirmation.details.accounts", cuentas);
 
-		    event.reply(response).setEphemeral(true).queue();
+			event.reply(response).setEphemeral(true).queue();
 		}
 
 	}

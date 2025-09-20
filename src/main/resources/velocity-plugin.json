@@ -1,7 +1,7 @@
 {
   "id": "securitynetwork",
   "name": "securitynetwork",
-  "version": "2.0.0v",
+  "version": "2.0.1v",
   "main": "rottenbonestudio.system.SecurityNetwork.velocity.VelocitySecurityPlugin",
   "authors": ["RottenBoneStudio"],
   "description": "Plugin de seguridad de red para controlar accesos por IP, país y continente en Velocity."

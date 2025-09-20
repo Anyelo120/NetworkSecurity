@@ -66,7 +66,10 @@ public class DiscordConfirmationAPI {
 				scheduler.schedule(() -> {
 					if (!future.isDone()) {
 						future.complete(false);
-						msg.editMessage(LangManager.get("discord.confirmation.expired")).setComponents().queue();
+						msg.delete().queue(null, error -> {
+							System.err.println(
+									"❌ Error al eliminar mensaje expirado (confirmación): " + error.getMessage());
+						});
 					}
 					confirmationMap.remove(playerUUID);
 					confirmationDetailsMap.remove(playerUUID);
@@ -79,7 +82,10 @@ public class DiscordConfirmationAPI {
 				scheduler.schedule(() -> {
 					if (!future.isDone()) {
 						future.complete(false);
-						msg.editMessage(LangManager.get("discord.confirmation.expired")).setComponents().queue();
+						msg.delete().queue(null, error -> {
+							System.err.println(
+									"❌ Error al eliminar mensaje expirado (confirmación): " + error.getMessage());
+						});
 					}
 					confirmationMap.remove(playerUUID);
 				}, 5, TimeUnit.MINUTES);

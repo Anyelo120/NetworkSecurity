@@ -44,7 +44,7 @@ public class SpigotSecurityPlugin extends JavaPlugin {
 		getCommand("ipchecktest").setExecutor(new TestCommand(ipCheckManager));
 		getCommand("ipadmin").setExecutor(new AdminCommand(ipCheckManager));
 
-		getServer().getPluginManager().registerEvents(new PlayerJoinListener(ipCheckManager), this);
+		getServer().getPluginManager().registerEvents(new PlayerJoinListener(ipCheckManager, this), this);
 
 		getLogger().info("SecurityNetwork activado correctamente.");
 	}
