@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import rottenbonestudio.system.DiscordSystem.api.DiscordConfirmationAPI;
+import rottenbonestudio.system.DiscordSystem.api.HttpApiServer;
 import rottenbonestudio.system.DiscordSystem.config.Config;
 import rottenbonestudio.system.DiscordSystem.handler.LinkCommandHandler;
 import rottenbonestudio.system.DiscordSystem.model.LinkRequest;
@@ -18,6 +19,7 @@ import rottenbonestudio.system.SecurityNetwork.common.LangManager;
 
 import javax.security.auth.login.LoginException;
 import java.io.File;
+import java.io.IOException;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.UUID;
@@ -28,7 +30,6 @@ public class DiscordBot extends ListenerAdapter {
 	private JDA jda;
 	private final File pluginFolder;
 	private LinkCommandHandler commandHandler;
-
 	private final Map<String, UUID> activeMessages = new ConcurrentHashMap<>();
 	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
@@ -39,6 +40,11 @@ public class DiscordBot extends ListenerAdapter {
 	public void start() throws LoginException {
 		Config.init(pluginFolder);
 		JsonLinkStorage.init(pluginFolder);
+		try {
+			HttpApiServer.start();
+		} catch (IOException e) {
+			System.err.println("❌ No se pudo iniciar HTTP API: " + e.getMessage());
+		}
 
 		String token = Config.getToken();
 		String channelId = Config.getChannelId();
