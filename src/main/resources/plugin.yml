@@ -1,5 +1,5 @@
 name: securitynetwork
-version: 2.0.1v
+version: 2.0.2v
 main: rottenbonestudio.system.SecurityNetwork.spigot.SpigotSecurityPlugin
 author: RottenBoneStudio
 description: Plugin de seguridad de red para controlar accesos por IP, país y continente en BungeeCord.
