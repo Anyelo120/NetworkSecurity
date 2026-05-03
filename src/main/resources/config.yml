@@ -1,0 +1,53 @@
+# ===============================
+# SecurityNetwork - Configuration
+# ===============================
+config-version: 2
+lang: es-es
+
+api:
+  proxycheck: your-proxycheck-key
+  ipHub: your-iphub-key
+  ipQualityScore: your-ipqualityscore-key
+  ipinfo: your-ipinfo-token
+  ipgeolocation: your-ipgeolocation-key
+
+webhook:
+  discord: "https://discord.com/api/webhooks/..."
+
+countries:
+  mode: blacklist
+  list:
+    - US
+    - RU
+
+continents:
+  mode: whitelist
+  list:
+    - Europe
+    - South America
+
+storage:
+  type: json
+  mysql:
+    host: localhost
+    port: 3306
+    database: network_security
+    user: root
+    password: password123
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: ""
+
+performance:
+  login:
+    max-attempts-per-ip: 8
+    window-seconds: 10
+    temp-block-seconds: 60
+  api:
+    max-global-in-flight: 32
+    in-flight-wait-timeout-ms: 4000
+    failure-cache-seconds: 30
+  webhook:
+    queue-size: 256
+    timeout-ms: 2500

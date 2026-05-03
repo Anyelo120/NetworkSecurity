@@ -1,0 +1,118 @@
+ip.blocked.temp=§c⚠ La teva IP està bloquejada temporalment.\n§7Comprova el nostre Discord per confirmar la teva identitat.
+ip.blocked=§cAccés denegat per motius de seguretat.\n§eCreus que és un error? -> gg/gatitos
+ip.blockeddiscord=§c⚠️ Debes aprobar el acceso desde Discord antes de entrar al servidor.\n§eRevisa el canal de vinculación.
+
+command.link.only-player=§cAquesta comanda només pot ser utilitzada per jugadors.
+command.link.usage=§eÚs: /vincular-discord <nom_discord>
+command.link.success=§7{0}
+command.unlink.only-player=§cAquesta comanda només pot ser utilitzada per jugadors.
+command.unlink.success=§7{0}
+
+command.test.only-console=§cAquesta comanda només es pot executar des de la consola.
+
+command.admin.no-permission=§cNo tens permís per usar aquesta comanda.
+command.admin.usage.delete=§cÚs: /ipadmin delete <ip>
+command.admin.usage.wipe=§cÚs: /ipadmin wipe confirm
+command.admin.ip-removed=§aIP {0} eliminada de la memòria cau.
+command.admin.stats.title=§6--- Estadístiques d’IPs ---
+command.admin.stats.blocked=§cBloquejades: §f{0}
+command.admin.stats.allowed=§aPermeses: §f{0}
+command.admin.wipe.success=§4Totes les dades han estat esborrades de la base de dades.
+command.admin.wipe.failed=§cNo s’ha pogut esborrar. Torna-ho a intentar.
+command.admin.unknown-subcommand=§cSubcomanda desconeguda. Usa: delete, stats, wipe
+command.admin.help.header=§eÚs:
+command.admin.help.delete=§7/ipadmin delete <ip> - Elimina una IP de la memòria cau
+command.admin.help.stats=§7/ipadmin stats - Mostra el nombre de bloquejades i permeses
+command.admin.help.wipe=§7/ipadmin wipe - PERILL! Esborra tota la base de dades (requereix confirmació)
+
+command.test.usage=§eÚs: /ipchecktest <ip>
+command.test.success=§aComanda executada correctament per a la IP: {0}
+command.test.error=§cError executant la comanda: {0}
+
+uuid.missing=§cNo s’ha pogut obtenir l’UUID del jugador.\n§eCreus que és un error? -> gg/gatitos
+ip.missing=§cNo s’ha pogut obtenir la IP del jugador.\n§eCreus que és un error? -> gg/gatitos
+
+webhook.prefix.time=`[{0}]`
+webhook.message.blocked=El jugador `{0}` ha estat bloquejat.
+webhook.reason.country-continent=Bloquejat per país o continent restringit.\nPaís: {0}\nContinent: {1}
+webhook.reason.early-block=Blocatge anticipat per restriccions de país/continent.\nPaís: {0}\nContinent: {1}
+webhook.reason.proxy=Connexió bloquejada per ús de VPN o Proxy.\nIP: {0}\nUUID: {1}
+webhook.reason.mismatch=Possible robatori de compte: discrepància de país.
+
+discord.link.sent=✔ Sol·licitud enviada a Discord. Esperant confirmació.
+discord.link.not-found=❌ No s'ha pogut trobar l'usuari: {0}
+discord.link.invalid-channel=❌ Canal de Discord invàlid.
+discord.link.message=🔗 <@{0}>, tens una sol·licitud de vinculació. Accepta per vincular amb el Minecraft UUID `{1}`
+discord.link.expired=❌ La sol·licitud de vinculació ha expirat.
+
+discord.unlink.requested=✔ Sol·licitud de desvinculació enviada a Discord. Esperant confirmació.
+discord.unlink.not-linked=❌ El teu compte de Minecraft no està vinculat.
+discord.unlink.error=⚠ Error en obtenir l'enllaç.
+discord.unlink.not-found=⚠ No s'ha pogut trobar l'usuari vinculat.
+discord.unlink.message=⚠ <@{0}>, vols **desvincular** el teu compte de Minecraft?
+discord.unlink.expired=⌛ La sol·licitud de desvinculació ha expirat.
+
+discord.confirmation.message=🛡️ <@{0}> Algú està intentant entrar al teu compte. Ets tu?
+discord.confirmation.expired=⌛ Sol·licitud de confirmació expirada.
+discord.confirmation.response=Gràcies per la teva resposta.
+discord.confirmation.error=❌ No s'ha pogut esborrar el missatge d'autenticació.
+discord.confirmation.no-link=❌ No s'ha trobat cap usuari de Discord vinculat a aquest compte.
+discord.confirmation.channel-error=❌ No s'ha pogut enviar la sol·licitud de confirmació. Revisa la configuració del canal.
+discord.confirmation.yes=Sí
+discord.confirmation.no=No
+
+discord.accept.expired=❌ Aquesta sol·licitud ja ha expirat.
+discord.accept.unauthorized=⚠ No estàs autoritzat a acceptar aquesta sol·licitud.
+discord.accept.already-linked=❌ Aquest compte de Minecraft ja està vinculat.
+discord.accept.already-used=❌ Aquest usuari de Discord ja està vinculat amb un altre compte.
+discord.accept.success=✔ Vinculació completada!
+discord.accept.error=❌ No s'ha pogut esborrar el missatge de confirmació.
+
+discord.unlink.confirm.success=✔ Has desvinculat el teu compte.
+discord.unlink.confirm.error=⚠ Hi ha hagut un problema en desvincular el teu compte.
+discord.unlink.confirm.unauthorized=⚠ Només l'usuari vinculat pot confirmar això.
+
+discord.confirmation.details.title=🔐 Informació de l'intent d'accés:
+discord.confirmation.details.ip=• IP: `{0}`
+discord.confirmation.details.country=• País: `{0}`
+discord.confirmation.details.continent=• Continent: `{0}`
+discord.confirmation.details.time=• Hora: `{0}`
+discord.confirmation.details.accounts=• Comptes vinculats a aquesta IP: `{0}`
+
+# Added by SecurityNetwork 2.0.3
+command.forceunlink.usage=&cUso: &f/forzar-desvincular-discord <jugador|uuid>
+command.forceunlink.invalid-target=&cNo se encontró un jugador o UUID válido para &f{0}&c.
+command.forceunlink.success=&aSe ha eliminado la vinculación de Discord para &f{0}&a.
+command.forceunlink.not-linked=&eLa cuenta de &f{0}&e no tiene ninguna vinculación de Discord.
+discord.link.already-pending=⚠ Ya tienes una solicitud de vinculación pendiente.
+discord.unlink.already-pending=⚠ Ya tienes una solicitud de desvinculación pendiente.
+discord.confirmation.unauthorized=⚠ No estás autorizado para ver esta información.
+
+daily-report.disabled=Reporte diario deshabilitado en la configuración.
+daily-report.channel-missing=Canal de reporte diario no configurado.
+daily-report.invalid-time=Formato de hora inválido para reporte diario: {0}
+daily-report.scheduled=Reporte diario programado para las {0} hora de Chile.
+daily-report.time-parse-error=Error parseando hora del reporte diario: {0}
+daily-report.embed.title=IP - {0}
+daily-report.embed.players.title=Jugadores conectados
+daily-report.embed.players.value=**{0}** jugador(es) online
+daily-report.embed.status.title=Estado del servidor
+daily-report.embed.status.online=**En línea**
+daily-report.embed.status.empty=**Sin jugadores**
+daily-report.embed.capacity.title=Capacidad
+daily-report.embed.capacity.value=Máximo: **{0}** jugadores
+daily-report.embed.footer=Reporte generado a las {0} (Chile)
+daily-report.sent=Reporte diario enviado correctamente.
+daily-report.send-error=Error enviando reporte diario: {0}
+daily-report.channel-not-found=No se pudo encontrar el canal de reporte diario: {0}
+daily-report.error=Error en reporte diario: {0}
+
+discord.instructions.title=Vinculación de Cuenta de Minecraft
+discord.instructions.description=Para proteger tu cuenta y poder jugar en el servidor, es necesario vincular tu cuenta de Minecraft con Discord.
+discord.instructions.link.title=Vincular Cuenta
+discord.instructions.link.value=Para vincular tu cuenta de Minecraft con Discord, usa el comando:\n```/vincular-discord (usuario discord)```\n**Ejemplo:** `/vincular-discord TuUsuarioDiscord`
+discord.instructions.unlink.title=Desvincular Cuenta
+discord.instructions.unlink.value=Para desvincular tu cuenta, usa el comando:\n```/desvincular-discord```
+discord.instructions.security.title=Seguridad
+discord.instructions.security.value=Después de ejecutar el comando en Minecraft, recibirás una notificación en este canal para confirmar la vinculación o desvinculación.\n\nEsto ayuda a proteger tu cuenta contra robos.
+discord.instructions.footer=Protege tu cuenta - Sistema de Seguridad

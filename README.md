@@ -6,7 +6,7 @@
 
 ## 🌐 Features
 
-- ✅ Supports **Spigot/Paper**, **BungeeCord**, and **Velocity**
+- ✅ Supports **Spigot**, **Paper**, **BungeeCord**, and **Velocity**
 - 🔍 Detects VPNs and proxies using **ProxyCheck**, **IpInfo**, or **IPGeolocation**
 - 🌍 Country and continent allow/deny lists
 - 💾 Supports **SQLite** or **MySQL** for caching
@@ -24,7 +24,7 @@ DiscordLinkAPI.getDiscordIdByMinecraft(UUID playerUUID);
 DiscordLinkAPI.getMinecraftUUIDByDiscordId(String discordId);
 ```
 ```Java
-CompletableFuture<Boolean> confirmacion = DiscordConfirmationAPI.solicitarConfirmacion(
+CompletableFuture<Boolean> confirmacion = DiscordConfirmationAPI.solicitarConfirmacionConDetalles(
     playerUUID,
     ip,                  // null o real
     pais,                // null o real

@@ -1,0 +1,38 @@
+name: securitynetwork
+version: 2.1.0v
+main: rottenbonestudio.system.SecurityNetwork.spigot.SpigotSecurityPlugin
+author: RottenBoneStudio
+description: Plugin de seguridad de red para controlar accesos por IP, país y continente en Spigot/Paper.
+api-version: 1.13
+
+commands:
+  ipchecktest:
+    description: Ejecuta un test de las APIs con una IP
+  ipadmin:
+    description: Ejecuta comandos de administrador
+  vincular-discord:
+    description: Comando para vincular cuenta de Minecraft con Discord
+  desvincular-discord:
+    description: Comando para desvincular cuenta de Minecraft con discord
+  forzar-desvincular-discord:
+    description: Comando administrativo para forzar desvinculación de Discord
+
+permissions:
+  securitynetwork.admin:
+    default: op
+  securitynetwork.ipchecktest:
+    default: op
+  securitynetwork.discord.link:
+    default: true
+  securitynetwork.discord.unlink:
+    default: true
+  securitynetwork.discord.forceunlink:
+    default: op
+  securitynetwork.bypass.vpn:
+    default: op
+  securitynetwork.bypass.country:
+    default: op
+  securitynetwork.bypass.continent:
+    default: op
+  securitynetwork.bypass.all:
+    default: op

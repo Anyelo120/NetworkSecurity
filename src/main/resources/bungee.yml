@@ -1,0 +1,17 @@
+name: securitynetwork
+version: 2.1.0v
+main: rottenbonestudio.system.SecurityNetwork.bungee.BungeeSecurityPlugin
+author: RottenBoneStudio
+description: Plugin de seguridad de red para controlar accesos por IP, país y continente en BungeeCord.
+
+commands:
+  ipchecktest:
+    description: Comando para testear APIs de IPs
+  ipadmin:
+    description: Ejecuta comandos de administrador
+  vincular-discord:
+    description: Comando para vincular cuenta de Minecraft con Discord
+  desvincular-discord:
+    description: Comando para desvincular cuenta de Minecraft con discord
+  forzar-desvincular-discord:
+    description: Comando administrativo para forzar desvinculación de Discord
